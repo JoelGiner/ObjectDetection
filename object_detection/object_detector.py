@@ -24,7 +24,7 @@ class ObjectDetector:
         while flag:
             # Reading the actual frame
             flag, frame = video.read()
-            frame = self.preprocess_frame(frame)
+            # frame = self.preprocess_frame(frame)
             # TODO: Preprocesar el frame
 
             if flag:
@@ -35,7 +35,7 @@ class ObjectDetector:
                 frame_ = detection[0].plot()
 
                 # We visualize the detection
-                cv2.imshow("frame", frame_)
+                cv2.imshow(f"Video: {self.video_path}", frame_)
                 # Exit if 'q' key is pressed
                 if cv2.waitKey(25) & 0xFF == ord("q"):
                     break
@@ -47,3 +47,4 @@ class ObjectDetector:
         :return:
         """
         # TODO: completar
+        return
